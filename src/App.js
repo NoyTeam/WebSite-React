@@ -29,9 +29,7 @@ const DownloadModal = (props)=>{
             </Modal.Header>
             <Modal.Body>
                 <h4>注意</h4>
-                <p>
-                    公共邀請碼：<font color="red">NoyAcg2022</font>
-                </p>
+                <p>公共邀請碼：<font color="red">NoyAcg2022</font></p>
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>關閉</Button>
@@ -160,7 +158,7 @@ class App extends Component {
                 <div style={{textAlign: 'center', padding: '30px 0 100px 0', margin: '0 16px'}} id="bulletin">
                     <h2 style={{fontSize: '2rem'}}>公告板</h2>
                     <p className="de-text">Bulletin Board</p>
-                    <Container style={{marginTop: 32, margin: '0 auto'}}>
+                    <Container style={{marginTop: 32, margin: '0 auto', maxWidth: 1000}}>
                         <Row>
                             <Col md="4" xs="12" style={{marginTop: 20}}>
                                 <a href="https://forum.noy.asia/d/18" target="_blank" rel="noreferrer" style={{textDecoration: 'none', color: '#000000'}}>
