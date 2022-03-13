@@ -1,0 +1,68 @@
+.navLink {
+    margin: 0 10px;
+    text-align: center;
+}
+.uhash {
+    line-height: 50px;
+    text-align: center;
+}
+.uhash-b {
+    animation-name: skyset;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(24);
+}
+@keyframes skyset {
+    0% {
+        color: red;
+    }
+    25% {
+        color: green;    
+    }
+    75% {
+        color: blue;
+    }
+    100% {
+        color: red;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: montserrat, sans-serif;
+    font-weight: 700 !important;
+    color: #282c47;
+}
+.de-text {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #5b617c;
+}
+.noy-button {
+    margin: 0 5px;
+    font-size: 16px !important;
+    padding: 14px 32px !important;
+}
+.noy-toast {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9999;
+}
+.noy-accordion {
+    text-indent:2em;
+    text-align: left;
+}
+.noy-pay-button {
+    border: 0 !important;
+    padding: 10px 16px !important;
+    margin: 0 5px;
+}
+.noy-card {
+    box-shadow: #d7d8e2 0 2px 4px 0;
+    width: 100%;
+    text-align: left;
+    border: 0 !important;
+    transition: all .2s ease-in-out;
+}
+.noy-card:hover {
+    transform: scale(1.05);
+}
