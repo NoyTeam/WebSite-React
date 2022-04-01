@@ -58,6 +58,19 @@ class App extends Component {
     }
 
     componentDidMount() {
+        // Get bg
+        let month = new Date().getMonth();
+        let bg = document.getElementById("bg");
+        if (month >= 0 && month < 4){
+            bg.style.backgroundImage = "url(https://ci.cncn3.cn/626c72f387440d4550778a007f467e06.webp)";
+        }else if (month >= 4 && month < 7){
+            bg.style.backgroundImage = "url(https://ci.cncn3.cn/41ce655fd84ca274a9980fb2d5f24f2f.webp)";
+        }else if (month >= 7 && month < 10){
+            bg.style.backgroundImage = "url(https://ci.cncn3.cn/36919ebc4153019cba97566c5aa03e95.webp)";
+        }else{
+            bg.style.backgroundImage = "url(https://ci.cncn3.cn/8f0912b0f46cee4a6a19492d9a3e7bb5.webp)";
+        }
+        // Get Config
         axios({
             url: "/msg.json"
         }).then(res=>{
@@ -71,6 +84,7 @@ class App extends Component {
                 })
             }
         });
+        // Get IP
         axios({
             url: "https://public-api.noy.asia/api/geoip"
         }).then(res=>{
@@ -123,37 +137,40 @@ class App extends Component {
                 <div style={{position: 'fixed', top: '56px', width: '100%', height: '50px', backgroundColor: '#e9f3ff', zIndex: 9}}>
                     <p className="uhash">公共邀請碼：<b className="uhash-b">NoyAcg2022</b></p>
                 </div>
-                <div style={{textAlign: 'center', padding: '125px 0', margin: '0 16px'}} id="home">
+                <div style={{textAlign: 'center', padding: '125px 0', margin: '0 16px', overflow: 'hidden'}} id="home">
+                    <div id="bg"></div>
                     <h1 style={{fontSize: '46px', marginBottom: '30px'}}>你好，歡迎來到NoyAcg！</h1>
                     <p className="de-text">NoyAcg是一個專屬於紳士們的站點(/≧▽≦)/</p>
                     <a href="#bulletin"><Button className="noy-button" style={{backgroundColor: '#e9f3ff', border: 0, color: '#2d8eff'}} size="lg">公告板</Button></a>
                     <a href="#downloads"><Button className="noy-button" variant="primary" size="lg">即刻開始</Button></a>
                 </div>
-                <div style={{textAlign: 'center', padding: '50px 16px 100px 16px', margin: '0 auto', maxWidth: 900}}>
-                    <h2 style={{fontSize: '2rem'}}>瞭解一下？</h2>
-                    <p className="de-text">NoyAcg是一個完全自研架構的平台!</p>
-                    <Accordion defaultActiveKey="0" style={{marginTop: 32}}>
-                        <Accordion.Item eventKey="0">
-                            <Accordion.Header>關於 NoyTeam</Accordion.Header>
-                            <Accordion.Body className="noy-accordion">
-                                NoyTeam是NoyAcg的開發/運營組織，成立於2020年2月19日！目前由2個成員組成，目標是以優質服務承載牛子和未來。
-                            </Accordion.Body>
-                        </Accordion.Item>
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header>關於 NoyAcg</Accordion.Header>
-                            <Accordion.Body className="noy-accordion">
-                                NoyAcg在2021年5月1日開始開發，在半個月後推出測試版，是一個公益本子平台，擁有完全自研的架構和高質量網絡線路/獨立伺服器源站承載！
-                            </Accordion.Body>
-                        </Accordion.Item>
-                        <Accordion.Item eventKey="2">
-                            <Accordion.Header>贊助我們</Accordion.Header>
-                            <Accordion.Body>
-                                <p>歡迎贊助NoyAcg!<br />(愛發電手續費較低，但是只支援中國大陸支付方式)</p>
-                                <a href="https://afdian.net/@niaopark" target="_blank" rel="noreferrer"><Button className="noy-pay-button" style={{backgroundColor: '#7e5fd9'}}>愛發電</Button></a>
-                                <a href="https://www.patreon.com/noyteam" target="_blank" rel="noreferrer"><Button className="noy-pay-button" style={{backgroundColor: '#ff424d'}}>Patreon</Button></a>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
+                <div style={{backgroundColor: '#FFF'}}>
+                    <div style={{textAlign: 'center', padding: '50px 16px 100px 16px', margin: '0 auto', maxWidth: 900}}>
+                        <h2 style={{fontSize: '2rem'}}>瞭解一下？</h2>
+                        <p className="de-text">NoyAcg是一個完全自研架構的平台!</p>
+                        <Accordion defaultActiveKey="0" style={{marginTop: 32}}>
+                            <Accordion.Item eventKey="0">
+                                <Accordion.Header>關於 NoyTeam</Accordion.Header>
+                                <Accordion.Body className="noy-accordion">
+                                    NoyTeam是NoyAcg的開發/運營組織，成立於2020年2月19日！目前由2個成員組成，目標是以優質服務承載牛子和未來。
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="1">
+                                <Accordion.Header>關於 NoyAcg</Accordion.Header>
+                                <Accordion.Body className="noy-accordion">
+                                    NoyAcg在2021年5月1日開始開發，在半個月後推出測試版，是一個公益本子平台，擁有完全自研的架構和高質量網絡線路/獨立伺服器源站承載！
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="2">
+                                <Accordion.Header>贊助我們</Accordion.Header>
+                                <Accordion.Body>
+                                    <p>歡迎贊助NoyAcg!<br />(愛發電手續費較低，但是只支援中國大陸支付方式)</p>
+                                    <a href="https://afdian.net/@niaopark" target="_blank" rel="noreferrer"><Button className="noy-pay-button" style={{backgroundColor: '#7e5fd9'}}>愛發電</Button></a>
+                                    <a href="https://www.patreon.com/noyteam" target="_blank" rel="noreferrer"><Button className="noy-pay-button" style={{backgroundColor: '#ff424d'}}>Patreon</Button></a>
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </Accordion>
+                    </div>
                 </div>
                 <div style={{textAlign: 'center', padding: '30px 0 100px 0', margin: '0 16px'}} id="bulletin">
                     <h2 style={{fontSize: '2rem'}}>公告板</h2>
