@@ -137,12 +137,14 @@ class App extends Component {
                 <div style={{position: 'fixed', top: '56px', width: '100%', height: '50px', backgroundColor: '#e9f3ff', zIndex: 9}}>
                     <p className="uhash">公共邀請碼：<b className="uhash-b">NoyAcg2022</b></p>
                 </div>
-                <div style={{textAlign: 'center', padding: '125px 0', margin: '0 16px', overflow: 'hidden'}} id="home">
+                <div id="home">
                     <div id="bg"></div>
-                    <h1 style={{fontSize: '46px', marginBottom: '30px'}}>你好，歡迎來到NoyAcg！</h1>
-                    <p className="de-text">NoyAcg是一個專屬於紳士們的站點(/≧▽≦)/</p>
-                    <a href="#bulletin"><Button className="noy-button" style={{backgroundColor: '#e9f3ff', border: 0, color: '#2d8eff'}} size="lg">公告板</Button></a>
-                    <a href="#downloads"><Button className="noy-button" variant="primary" size="lg">即刻開始</Button></a>
+                    <div class="text">
+                        <h1 style={{fontSize: '46px', marginBottom: '30px'}}>你好，歡迎來到NoyAcg！</h1>
+                        <p className="de-text">NoyAcg是一個專屬於紳士們的站點(/≧▽≦)/</p>
+                        <a href="#bulletin"><Button className="noy-button" style={{backgroundColor: '#e9f3ff', border: 0, color: '#2d8eff'}} size="lg">公告板</Button></a>
+                        <a href="#downloads"><Button className="noy-button" variant="primary" size="lg">即刻開始</Button></a>
+                    </div>
                 </div>
                 <div style={{backgroundColor: '#FFF'}}>
                     <div style={{textAlign: 'center', padding: '50px 16px 100px 16px', margin: '0 auto', maxWidth: 900}}>

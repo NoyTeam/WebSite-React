@@ -72,9 +72,29 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     height: 100%;
     width: 100%;
-    background-size: cover;
-    background-attachment: fixed;
+    background-position: right center;
     background-repeat: no-repeat;
     z-index: -999;
     opacity: 0.25;
+}
+#home {
+    text-align: center;
+    padding: 125px 0;
+    margin: 0 16px;	
+    overflow: hidden;
+}
+@media screen and (max-width:1400px) { 
+    #bg {
+        background-position: 80% center;
+    }
+}
+@media screen and (max-width:800px) { 
+    #bg {
+        background-position: 70% center;
+    }
+}
+@media screen and (max-width:500px) { 
+    #bg {
+        background-position: 87.5% center;
+    }
 }
