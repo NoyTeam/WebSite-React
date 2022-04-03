@@ -35,7 +35,7 @@ const DownloadModal = (props)=>{
                 <Button onClick={props.onHide}>關閉</Button>
                 <Button onClick={()=>{
                     if (props.isChinaMainland){
-                        window.open("https://unpkg.zhimg.com/noyacg-app/"+props.appname);
+                        window.open("https://unpkg.com/noyacg-app/"+props.appname);
                         console.info("isChinaMainland:true");
                     }else{
                         window.open("https://npm.elemecdn.com/noyacg-app/"+props.appname);
