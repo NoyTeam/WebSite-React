@@ -68,14 +68,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 #bg {
     position: absolute;
-    top: 0;
+    top: 100px;
     left: 0;
-    height: 100%;
+    height: 500px;
     width: 100%;
-    background-position: right center;
-    background-repeat: no-repeat;
     z-index: -999;
-    opacity: 0.25;
+
 }
 #home {
     text-align: center;
@@ -83,7 +81,27 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 16px;	
     overflow: hidden;
 }
-@media screen and (max-width:1400px) { 
+@media screen and (min-width:1200px) { 
+    #bg {
+        background-position: 20% 40%;
+        background-size: 140%;
+        background-repeat: no-repeat;
+    }
+    .home-text {
+        text-align: left;
+        margin-left: 15vw;
+    }
+}
+@media screen and (max-width:1199px) { 
+    #bg {
+        background-position: 75%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.25;
+        height: 600px;
+    }
+}
+/* @media screen and (max-width:1400px) { 
     #bg {
         background-position: 80% center;
     }
@@ -97,4 +115,4 @@ h1, h2, h3, h4, h5, h6 {
     #bg {
         background-position: 87.5% center;
     }
-}
+} */
