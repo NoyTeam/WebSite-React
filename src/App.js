@@ -250,8 +250,8 @@ class App extends Component {
                 <DownloadModal
                     show={downloadShow}
                     onHide={() => this.setState({ downloadShow: false })}
-                    appname={"asia.noy.now_2.2.apk"}
-                    forum={"https://forum.noy.asia/d/60-android-app-22-upgrade"}
+                    appname={"asia.noy.now_2.3.apk"}
+                    forum={"https://forum.noy.asia/d/75-android-app-23"}
                     isChinaMainland={isChinaMainland}
                 />
 
