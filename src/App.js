@@ -33,15 +33,7 @@ const DownloadModal = (props) => {
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>關閉</Button>
-                <Button onClick={() => {
-                    if (!props.isChinaMainland) {
-                        window.open("https://unpkg.com/noyacg-app/" + props.appname);
-                        console.info("isChinaMainland: true");
-                    } else {
-                        window.open("https://npm.elemecdn.com/noyacg-app/" + props.appname);
-                    }
-                    window.location = props.forum;
-                }}>下載</Button>
+                <a href={`./downloads.html?a=${props.isChinaMainland?"cm":"gl"}`} target="_blank"><Button>下載</Button></a>
             </Modal.Footer>
         </Modal>
     );
@@ -250,8 +242,6 @@ class App extends Component {
                 <DownloadModal
                     show={downloadShow}
                     onHide={() => this.setState({ downloadShow: false })}
-                    appname={"asia.noy.now_2.3.apk"}
-                    forum={"https://forum.noy.asia/d/75-android-app-23"}
                     isChinaMainland={isChinaMainland}
                 />
 
