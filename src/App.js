@@ -226,7 +226,7 @@ class App extends Component {
                 <div style={{ backgroundColor: '#282c47', textAlign: 'center' }} id="downloads">
                     <h2 style={{ fontSize: '2rem', color: '#FFFFFF', margin: 0, padding: "60px 0 30px" }}>即刻開始</h2>
                     <Button className="noy-button" variant="primary" size="lg" onClick={() => { this.setState({ downloadShow: true }) }}>Android</Button>
-                    <a href="https://web.noy.asia" target="_blank" rel="noreferrer"><Button className="noy-button" variant="primary" size="lg">Web 網站</Button></a>
+                    <a href="https://app.noy.asia" target="_blank" rel="noreferrer"><Button className="noy-button" variant="primary" size="lg">Web 網站</Button></a>
                     <Container style={{ padding: '40px 0 30px' }}>
                         <Row style={{ "--bs-gutter-x": 'unset' }}>
                             <Col md="4" xs="12">
@@ -250,7 +250,7 @@ class App extends Component {
                 <DownloadModal
                     show={downloadShow}
                     onHide={() => this.setState({ downloadShow: false })}
-                    appname={"asia.noy.now_2.3.apk"}
+                    appname={"asia.noy.now_2.3x.apk"}
                     forum={"https://forum.noy.asia/d/75-android-app-23"}
                     isChinaMainland={isChinaMainland}
                 />
