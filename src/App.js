@@ -18,7 +18,7 @@ const DownloadModal = (props) => {
     return (
         <Modal
             {...props}
-            size="lg"
+            size="md"
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
@@ -45,7 +45,8 @@ class App extends Component {
         this.state = {
             showToast: false,
             downloadShow: false,
-            isChinaMainland: false
+            isChinaMainland: false,
+            usdtShow: false,
         }
     }
 
@@ -95,7 +96,7 @@ class App extends Component {
     }
 
     render() {
-        let { showToast, toastCover, toastUser, toastMsg, toastTime, downloadShow, isChinaMainland, r18Show, c } = this.state;
+        let { showToast, toastCover, toastUser, toastMsg, toastTime, downloadShow, isChinaMainland, r18Show, c, usdtShow } = this.state;
 
         return (
             <div>
@@ -163,6 +164,7 @@ class App extends Component {
                                     <p>歡迎贊助NoyAcg!<br />(愛發電手續費較低，但是只支援中國大陸支付方式)</p>
                                     <a href="https://afdian.net/@niaopark" target="_blank" rel="noreferrer"><Button className="noy-pay-button" style={{ backgroundColor: '#7e5fd9' }}>愛發電</Button></a>
                                     <a href="https://www.patreon.com/noyteam" target="_blank" rel="noreferrer"><Button className="noy-pay-button" style={{ backgroundColor: '#ff424d' }}>Patreon</Button></a>
+                                    <Button className="noy-pay-button" style={{ backgroundColor: '#54ac94' }} onClick={() => this.setState({ usdtShow: true })}>USDT</Button>
                                 </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
@@ -233,7 +235,7 @@ class App extends Component {
                                 </a>
                             </Col>
                             <Col md="4" xs="12">
-                                <small style={{ color: '#5b617c' }}><a style={{ textDecoration: 'none' }} href="/privacy_agreement.html" target="_blank">隱私協議</a> · Powered by <a style={{ textDecoration: 'none' }} href="https://forum.noy.asia" target="_blank" rel="noreferrer">NoyTeam</a></small>
+                                <small style={{ color: '#5b617c' }}><a style={{ textDecoration: 'none' }} href="/privacy_agreement.html" target="_blank">使用者協定</a> · Powered by <a style={{ textDecoration: 'none' }} href="https://forum.noy.asia" target="_blank" rel="noreferrer">NoyTeam</a></small>
                             </Col>
                         </Row>
                     </Container>
@@ -261,10 +263,30 @@ class App extends Component {
                         <img height="100px" width="100px" style={{ margin: 24 }} src="/R18.webp" alt="" />
                         <h3>請確保你已滿 18 歲</h3>
                         <h4>並符合 {c} 的法律條款</h4>
-                        <p>*繼續訪問代表您已閲讀我們的 <a href="/privacy_agreement.html" target={"_blank"}>隱私協議</a></p>
+                        <p>*繼續訪問代表您已閲讀我們的 <a href="/privacy_agreement.html" target={"_blank"}>使用者協定</a></p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={() => this.setState({ r18Show: false })}>繼續</Button>
+                    </Modal.Footer>
+                </Modal>
+
+                <Modal
+                    show={usdtShow}
+                    onHide={() => this.setState({ usdtShow: false })}
+                    size="md"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            透過 USDT 贊助我們
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <li>USDT TRC20 位址: <pre style={{ display: 'inline', backgroundColor: '#EEEEEE', padding: 2, borderRadius: 5 }}>TJgWZg2VFa9M5hL2e2oLaSfd9dRSs6MDZe</pre></li>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={() => this.setState({ usdtShow: false })}>關閉</Button>
                     </Modal.Footer>
                 </Modal>
 
